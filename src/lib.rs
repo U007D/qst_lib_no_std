@@ -12,4 +12,6 @@ clippy::maybe_infinite_iter, clippy::option_unwrap_used, clippy::result_unwrap_u
 // #![warn(clippy::multiple_crate_versions, clippy::print_on_stdout, clippy::unimplemented, clippy::use_debug)]
 
 mod error;
+#[cfg(test)]
+mod unit_tests;
 pub use self::error::Error;
