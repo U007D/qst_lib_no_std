@@ -11,10 +11,17 @@
 // ^^^ End of safety-critical lint section ^^^
 #![allow(clippy::match_bool,)]
 
-use {{crate_name}}::Error;
-use std::result::Result as StdResult;
-type Result<T> = StdResult<T, Error>;
+use {{crate_name}}::{
+    Error,
+    run,
+};
+use std::{
+    env::args_os,
+    ffi::OsString,
+    result::Result as StdResult,
+};
 
 fn main() -> Result<()> {
-    Ok(())
+    run(args_os().map(|arg| arg.into_string())
+                               .collect::<StdResult<Vec<_>, OsString>>()?)
 }
