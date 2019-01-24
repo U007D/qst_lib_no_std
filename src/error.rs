@@ -1,4 +1,3 @@
-use crate::consts::*;
 use std::{
     ffi::OsString,
     fmt::{
@@ -7,6 +6,8 @@ use std::{
         Result as FmtResult,
     },
 };
+
+use crate::consts::*;
 
 #[derive(Debug)]
 pub enum Error {
