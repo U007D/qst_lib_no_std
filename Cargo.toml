@@ -4,14 +4,10 @@ version = "0.1.0"
 authors = ["{{authors}}"]
 edition = "2018"
 
-[[bin]]
-doc = false
-name = "{{project-name}}"
-path = "src/main.rs"
-test = false
+[build]
+target = "thumbv7m-none-eabi"
 
 [dependencies]
-structopt = "*"
 
 [profile.dev]
 codegen-units = 1
@@ -19,7 +15,7 @@ debug = true
 debug-assertions = true
 lto = false
 opt-level = 0
-panic = "unwind"
+panic = "abort"
 rpath = false
 
 [profile.release]
@@ -28,7 +24,7 @@ debug = false
 debug-assertions = false
 lto = true
 opt-level = 3
-panic = "unwind"
+panic = "abort"
 rpath = false
 
 [profile.test]

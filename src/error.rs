@@ -1,5 +1,4 @@
-use std::{
-    ffi::OsString,
+use core::{
     fmt::{
         Display,
         Formatter,
@@ -10,22 +9,10 @@ use std::{
 use crate::consts::*;
 
 #[derive(Debug)]
-pub enum Error {
-    ArgNotConvertibleToUtf8(OsString),
-}
+pub enum Error {}
 
 impl Display for Error {
-    fn fmt(&self, f: &mut Formatter) -> FmtResult {
-        write!(f, "{}", match self {
-            Error::ArgNotConvertibleToUtf8(os_string) => format!("{}: {:?}",
-                                                                 msg::ERR_ARG_NOT_CONVERTIBLE_TO_UTF_8,
-                                                                 os_string),
-        })
-    }
-}
-
-impl From<OsString> for Error {
-    fn from(err: OsString) -> Self {
-        Error::ArgNotConvertibleToUtf8(err)
+    fn fmt(&self, _f: &mut Formatter) -> FmtResult {
+        unimplemented!()
     }
 }
