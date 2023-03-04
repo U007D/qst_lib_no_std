@@ -4,10 +4,12 @@ version = "0.1.0"
 authors = ["{{authors}}"]
 edition = "2021"
 
-[build]
-target = "thumbv7m-none-eabi"
-
 [dependencies]
+bool_ext = { version = "*", default-features = false }
+thiserror = { version = "*", package = "thiserror-core", default-features = false }
+
+[badges]
+maintenance = { status = "actively-developed" }
 
 [profile.dev]
 codegen-units = 1
