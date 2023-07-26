@@ -6,10 +6,10 @@
 // Safety-critical application lints
 #![forbid(bare_trait_objects, overflowing_literals)]
 #![deny(
-    clippy::pedantic,
+    clippy::arithmetic_side_effects,
     clippy::float_cmp_const,
     clippy::indexing_slicing,
-    clippy::integer_arithmetic,
+    clippy::pedantic,
     clippy::unwrap_used
 )]
 #![allow(
