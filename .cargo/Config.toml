@@ -1,3 +1,6 @@
+[alias]
+test_host = "test --target=aarch64-apple-darwin"
+
 [build]
 rustc-wrapper = "/Users/brad/.cargo/bin/clippy-driver"
 target = "aarch64-unknown-none"
